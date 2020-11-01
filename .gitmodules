@@ -1,0 +1,3 @@
+[submodule ".\\testcases\\realworld"]
+	path = .\\testcases\\realworld
+	url = https://github.com/pizzeys/MalwareExamples
