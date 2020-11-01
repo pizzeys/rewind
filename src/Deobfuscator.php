@@ -11,6 +11,7 @@ class Deobfuscator
         $DEFAULT_SET = array(
             '\Rewind\Transforms\CollapseStrings',
             '\Rewind\Transforms\RemoveComments',
+            '\Rewind\Transforms\EliminateStringFunctions',
         );
 
         $this->traverser = new NodeTraverser();
