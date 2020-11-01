@@ -1,0 +1,19 @@
+{
+    "name": "pizzeys/rewind",
+    "description": "A modular tool for deobfuscating PHP malware that criminals left all over your -",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Sam Pizzey",
+            "email": "sam@pizzey.me"
+        }
+    ],
+    "require": {
+        "nikic/php-parser": "^4.10",
+        "vanilla/garden-cli": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {"Rewind\\": "src/"}
+    }
+}

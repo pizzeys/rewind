@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Garden\Cli\Cli;
+
+$cli = new Cli();
+
+// TODO: Add options for enabling/disabling transforms at runtime
+$cli->description('A modular tool for deobfuscating malware.')
+//    ->opt('verbose:v', 'Output way too much information.', false, 'boolean')
+//    ->opt('disable:d, 'Disable a default transform.')
+    ->opt('tree:t', 'Output the generated AST instead of the code.', false, 'boolean');
+
+$args = $cli->parse($argv, true);
+
+// TODO: Handle error better here (if there isnt a file passed)
+$code = file_get_contents($args->getarg(0));
+
+$deob = new Rewind\Deobfuscator();
+$deob->parse($code);
+$deob->run();
+
+if($args->getopt('tree', false)) {
+    $deob->dumpTree();
+} else {
+    $deob->dumpCode();
+}
