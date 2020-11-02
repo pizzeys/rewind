@@ -10,6 +10,7 @@ class Deobfuscator
     public function __construct() {
         $DEFAULT_SET = array(
             '\Rewind\Transforms\CollapseStrings',
+            '\Rewind\Transforms\CollapseMath',
             '\Rewind\Transforms\RemoveComments',
             '\Rewind\Transforms\EliminateStringFunctions',
         );
